@@ -94,9 +94,9 @@ class EmailTemplatesController extends BaseController
     {
         $emailTemplate = EmailTemplate::findOrFail($id);
 
-        $emailTemplate->title = Input::get('title');
-        $emailTemplate->subject = Input::get('subject');
-        $emailTemplate->content = Input::get('content');
+        $emailTemplate->title = $request->get('title');
+        $emailTemplate->subject = $request->get('subject');
+        $emailTemplate->content = $request->get('content');
 
         $emailTemplate->save();
 
